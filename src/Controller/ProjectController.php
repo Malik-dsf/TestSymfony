@@ -12,6 +12,6 @@ class ProjectController extends AbstractController
     #[Route('/project/{slug}-{id}', name: 'project.show')]
     public function index(Request $request): Response
     {
-        dd($request);
+        dd($request->attributes->get('slug'), $request->attributes->get('id'));
     }
 }
